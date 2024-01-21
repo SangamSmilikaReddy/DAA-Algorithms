@@ -1,0 +1,17 @@
+'''
+class Node:
+    def __init__(self,key=0,left=None, right=None):
+        self.key= key
+        self.right = right
+        self.left = left
+'''
+def issymmetric(t):
+    def is_mirror(left,right):
+        if not left and not right:
+            return True
+        if not left or not right or left.val!=right.val:
+            return False
+        return is_mirror(left.left,right.right) and is_mirror(left.right,right.left)
+    return is_mirror(t,t)
+
+# root = [1,2,2,3,4,4,3]
