@@ -1,8 +1,10 @@
+'''
 class Node:
     def __init__(self,key=0,left=None, right=None):
         self.key= key
         self.right = right
         self.left = left
+'''
 
 def issametree(t1,t2):
     if not t1 and not t2:
@@ -13,6 +15,8 @@ def issametree(t1,t2):
         return False
     return issametree(t1.left,t2.left) and issametree(t1.right,t2.right)
 
+'''
 t1=[1,2,3]
 t2 =[1,3,2]
 print(issametree(t1,t2))
+'''
