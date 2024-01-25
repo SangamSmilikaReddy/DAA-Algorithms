@@ -1,0 +1,39 @@
+def union_and_intersection(a1, a2):
+    union_result = []
+    intersection_result = []
+
+    i, j = 0, 0
+
+    while i < len(a1) and j < len(a2):
+        if a1[i] < a2[j]:
+            union_result.append(a1[i])
+            i += 1
+        elif a1[i] > a2[j]:
+            union_result.append(a2[j])
+            j += 1
+        else:
+            # Elements are equal, so it's part of the intersection
+            union_result.append(a1[i])
+            intersection_result.append(a1[i])
+            i += 1
+            j += 1
+
+    # Add remaining elements from a1
+    while i < len(a1):
+        union_result.append(a1[i])
+        i += 1
+
+    # Add remaining elements from a2
+    while j < len(a2):
+        union_result.append(a2[j])
+        j += 1
+
+    return union_result, intersection_result
+
+# Example usage:
+a1 = [1, 2, 4, 5, 6]
+a2 = [2, 3, 5, 7]
+u, i = union_and_intersection(a1, a2)
+
+print("Union:", u)
+print("Intersection:", i)

@@ -1,0 +1,12 @@
+def movenegativeandpositive(a):
+    l = 0
+    h = len(a)-1
+    while l<=h:
+        if a[l]>=0:
+            a[h],a[l]=a[l],a[h]
+            h-=1
+        else:
+            l+=1
+    return a
+a = [-3,4,3,-1,2,-4,7,6]
+print(movenegativeandpositive(a))
