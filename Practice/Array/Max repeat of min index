@@ -1,0 +1,26 @@
+def find_first_repeating_element(arr):
+    index_map = {}  # Dictionary to store the index of each element
+
+    min_index = float('inf')  # Initialize with positive infinity
+    repeating_element = None
+
+    for i, num in enumerate(arr):
+        if num in index_map:
+            # Update the minimum index and repeating element
+            if index_map[num] < min_index:
+                min_index = index_map[num]
+                repeating_element = num
+        else:
+            # If the element is not in the dictionary, add it with its index
+            index_map[num] = i
+
+    return repeating_element
+
+# Example usage:
+arr = [10, 5, 3, 4, 3, 5, 6,3]
+result = find_first_repeating_element(arr)
+
+if result is not None:
+    print(f"The first repeating element is {result} at index {arr.index(result)}")
+else:
+    print("No repeating elements found.")
