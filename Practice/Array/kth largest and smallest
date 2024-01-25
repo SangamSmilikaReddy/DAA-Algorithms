@@ -1,0 +1,9 @@
+def kth_largest_smallest_optimal(a,k):
+    arr.sort()
+    l = arr[-k]
+    s = arr[k-1]
+    return l,s
+
+arr = [1,2,3,4,5,9,6,33,19]
+k= 3
+print(kth_largest_smallest_optimal(arr,k))
