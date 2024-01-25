@@ -1,0 +1,20 @@
+def subsetarrornot(arr1,arr2):
+    c=0
+    for i in arr2:
+        if i in arr1:
+            c+=1
+    if c==len(arr2):
+        return True
+    return False
+    
+arr1 = [1,2,3,4]
+arr2 = [2,3,8]
+print(subsetarrornot(arr1,arr2))
+
+'''
+def is_subset(arr1, arr2):
+    set_arr1 = set(arr1)
+    set_arr2 = set(arr2)
+
+    return set_arr1.issubset(set_arr2)
+'''
