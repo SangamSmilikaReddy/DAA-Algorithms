@@ -1,0 +1,13 @@
+def mergelist2inbetweenlist1(l1,a,b,l2):
+    start,end = l1,l1
+    for _ in range(a-1):
+        start = start.next
+    
+    for _ in range(b+1):
+        end = end.next
+        
+    start.next = l2
+    while start.next:
+        start = start.next
+    start.next = end
+    return l1

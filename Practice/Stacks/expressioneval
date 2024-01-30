@@ -1,0 +1,22 @@
+def evalRPN(tokens):
+    dict = {'+':1,'-':2,'*':3,'/':4}
+    l=[]
+    for i in tokens:
+        if i not in dict.keys():
+            l.append(int(i))
+        else:
+            x = l.pop()
+            y = l.pop()
+            if dict[i]==1:
+                ans = y+x
+            elif dict[i]==2:
+                ans = y-x
+            elif dict[i]==3:
+                ans = x*y
+            elif dict[i]==4:
+                ans = int(float(y)/x)
+            l.append(ans)
+    return l[0]
+
+tokens = ['5','1','-','9','*']
+print(evalRPN(tokens))
