@@ -1,0 +1,21 @@
+#bruteforce
+'''
+def sumof2(target,l):
+    for i in range(len(l)-1):
+        for j in range(i,len(l)):
+            if l[i]+l[j]==target:
+                return [i,j]
+    return []
+'''
+
+def sumof2(target,l):
+    d={}
+    for i in range(len(l)):
+        if target - l[i] in d:
+            return [d[target-l[i]],i]
+        d[l[i]] =i
+    return []
+
+l=[1,2,8,4,5,6,8]
+target = 9
+print(sumof2(target,l))
