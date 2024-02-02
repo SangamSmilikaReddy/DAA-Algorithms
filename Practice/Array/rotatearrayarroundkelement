@@ -1,0 +1,18 @@
+#Implement a function to rotate an array to the right by a given number of steps. For example, if the array is [1, 2, 3, 4, 5] and the rotation is 2, the result should be [4, 5, 1, 2, 3].
+
+def rotateelement(l,k):
+    k=k%len(l)
+    reverse(l,0,len(l)-1)
+    reverse(l,0,k-1)
+    reverse(l,k,len(l)-1)
+    return l
+    
+def reverse(l,start,end):
+    while start<end:
+        l[start],l[end] = l[end],l[start]
+        start+=1
+        end-=1
+        
+l=[1,2,3,4,5]
+k=2
+print(rotateelement(l,k))

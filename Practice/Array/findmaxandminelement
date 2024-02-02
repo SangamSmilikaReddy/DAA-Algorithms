@@ -1,0 +1,37 @@
+'''def maxandmin(l):
+    max = l[0]
+    min = l[0]
+    
+    for i in l:
+        if i<min:
+            min = i
+        if i>max:
+            max = i
+    return max,min
+
+l=[6,3,9,2,5,1,7,8]
+print(maxandmin(l))
+'''
+#minmax with tournament method
+
+def maxandmin(low,high,l):
+    Min = l[low]
+    Max = l[high] 
+    if low==high:
+        Min,Max = l[low],l[low]
+        return Min,Max
+    elif high == low+1:
+        if l[low]>l[high]:
+            Min,Max = l[low],l[high]
+        else:
+            Min,Max = l[high],l[low]
+        return Min,Max
+    else:
+        mid = int((low+high)/2)
+        max1,min1 = maxandmin(low,mid,l)
+        max2,min2 = maxandmin(mid+1,high,l)
+    
+    return max(max1,max2),min(min1,min2)
+        
+l=[6,3,9,2,5,1,7,8]
+print(maxandmin(0,len(l)-1,l))

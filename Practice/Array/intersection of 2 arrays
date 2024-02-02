@@ -1,0 +1,22 @@
+#Write a program to find the intersection of two arrays. The intersection should be represented as an array containing unique elements.
+
+def intersectionof2arrays(l1,l2):
+    l1.sort()
+    l2.sort()
+    intersection = []
+    m,n=0,0
+    
+    while m<len(l1) and n<len(l2):
+        if l1[m]==l2[n]:
+            intersection.append(l1[m])
+            m+=1
+            n+=1
+        elif l1[m]>l2[n]:
+            n+=1
+        else:
+            m+=1
+    return intersection
+
+l1=[1,2,4,6,5,7]
+l2=[7,4,8,2]
+print(intersectionof2arrays(l1,l2))

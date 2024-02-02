@@ -1,0 +1,21 @@
+#using extra array
+'''
+def reverse(l):
+    x = l[::-1]
+    return x
+l=[1,2,3,4,5,6]
+print(reverse(l))
+'''
+
+#reverse in place
+
+def reverse(l):
+    s=0
+    e=len(l)-1
+    while s<e:
+        l[s],l[e]=l[e],l[s]
+        s+=1
+        e-=1
+    return l
+l=[1,2,3,4,5,6]
+print(reverse(l))
