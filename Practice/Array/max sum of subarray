@@ -1,0 +1,13 @@
+def maxsumofsubarray(l):
+    currentsum = 0
+    maxsum = float('-inf')
+    for i in range(len(l)):
+        currentsum+=l[i]
+        if currentsum>maxsum:
+            maxsum = currentsum
+        if currentsum<0:
+            currentsum=0
+    return maxsum
+    
+l=[1,2,3,-6,3,4,6]
+print(maxsumofsubarray(l))

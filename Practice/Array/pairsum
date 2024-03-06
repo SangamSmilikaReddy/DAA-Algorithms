@@ -1,0 +1,12 @@
+def getPairsCount(arr, n, k):
+    c=0
+    d={}
+    for i in range(n):
+        if k-arr[i] in d:
+            c=c+d[k-arr[i]]
+        d[arr[i]] = d.get(arr[i],0)+1
+    return c
+
+a=[1,5,3,4,1]
+k=6
+print(getPairsCount(a,len(a),6))
