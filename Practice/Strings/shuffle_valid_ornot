@@ -1,0 +1,34 @@
+def check_length(first, second, result):
+    return len(first)+len(second)==len(result)
+
+def sort_string(string):
+    return ''.join(sorted(string))
+
+def shuffle_check(first, second, result):
+    f= sort_string(first)
+    s= sort_string(second)
+    r= sort_string(result)
+    
+    i=j=k=0
+    while k!=len(r):
+        if i<len(f) and f[i]==r[k]:
+            i+=1
+        elif j<len(s) and s[j]==r[k]:
+            j+=1
+        else:
+            return False
+        k+=1
+    if i<len(f) or j<len(s):
+        return False
+    return True
+
+first = "XYZ"
+second = "12"
+results = ["1XY2Z", "Y1X2", "Y21ZX"]
+
+for result in results:
+    if check_length(first, second, result) and shuffle_check(first, second, result):
+        print(result + " is a valid shuffle of " + first + " and " + second)
+    else:
+        print(result + " is not a valid shuffle of " + first + " and " + second)
+

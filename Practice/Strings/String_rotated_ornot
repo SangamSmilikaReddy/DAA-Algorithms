@@ -1,0 +1,12 @@
+def rotated(s1,s2):
+    if len(s1)!=len(s2):
+        return False
+    for i in range(len(s1)):
+        if s1[i] == s2[0]:  # compare the ith charcter in s1 with first character of s2
+            if s1[i:] == s2[:len(s1)-i]:  # compare prefix of s2 with suffix of s1
+                if s1[:i] == s2[len(s1)-i:]:
+                    return True
+    return False
+s1="AABCD"
+s2="ABCDA"
+print(rotated(s1,s2))
