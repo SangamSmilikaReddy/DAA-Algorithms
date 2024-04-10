@@ -1,0 +1,15 @@
+def f(i,j,s,t):
+    if i<0 or j<0:
+        return 0
+    if s[i]==t[j] and i!=j:
+        return 1+f(i-1,j-1,s,t)
+    return max(f(i-1,j,s,t),f(i,j-1,s,t))
+
+
+def longest_repeating_string(s):
+    t=s
+    n=len(s)
+    return f(n-1,n-1,s,t)
+
+s="axxxy"
+print(longest_repeating_string(s))

@@ -1,0 +1,21 @@
+def sub_palindrom(s):
+    l=len(s)
+    ls=''
+    for i in range(l):
+        if l%2==0:
+            l=i
+            h=i+1
+            while (l>=0 and h<l and s[l]==s[h]):
+                l-=1
+                h+=1
+        else:
+            l=i
+            h=i+2
+            while (l>=0 and h<l and s[l]==s[h]):
+                l-=1
+                h+=1
+        p=s[l+1:h]
+        ls=max(p,ls,key=len)
+    return ls
+s='abbacdrfr'
+print(sub_palindrom(s))

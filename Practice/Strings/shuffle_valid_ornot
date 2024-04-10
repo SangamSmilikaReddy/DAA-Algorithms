@@ -24,7 +24,7 @@ def shuffle_check(first, second, result):
 
 first = "XYZ"
 second = "12"
-results = ["1XY2Z", "Y1X2", "Y21ZX"]
+results = ["1XY2Z", "Y1X2Z", "Y21ZX"]
 
 for result in results:
     if check_length(first, second, result) and shuffle_check(first, second, result):
