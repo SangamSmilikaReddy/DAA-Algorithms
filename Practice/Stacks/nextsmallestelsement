@@ -1,0 +1,13 @@
+def nsm(a):
+    n=len(a)
+    stack=[]
+    ans=[-1]*n
+    for i in range(n):
+        next=a[i]
+        
+        while (len(stack)>0 and a[stack[-1]] >next):
+            ans[stack.pop()]=next
+        stack.append(i)
+    return ans
+a=[4,8,5,2,25]
+print(nsm(a))
