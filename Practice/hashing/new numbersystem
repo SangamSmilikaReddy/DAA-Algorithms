@@ -1,0 +1,7 @@
+def numbersystem(s,n,i):
+    if n<0:
+        return 0
+    return ((ord(s[n])-ord('a')+1)*(20**i)+numbersystem(s,n-1,i+1))
+
+s="aa"
+print(numbersystem(s,len(s)-1,0))
