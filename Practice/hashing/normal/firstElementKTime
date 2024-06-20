@@ -1,0 +1,14 @@
+def firstElementKTime(k, a):
+        hmap={}
+        for i in a:
+            if i in hmap:
+                hmap[i]+=1
+                if hmap[i]==k:
+                    return i
+            else:
+                hmap[i]=1
+        return -1
+
+k=2
+a=[1,5,2,4,6,3,2,4,5]
+print(firstElementKTime(k,a))
