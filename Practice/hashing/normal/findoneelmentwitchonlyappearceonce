@@ -1,0 +1,7 @@
+def findOnce(arr):
+        x=sum(arr)
+        y=set(arr)
+        z=2*sum(y)
+        return z-x
+arr=[1,2,3,4,5,6,2,3,4,5,6]
+print(findOnce(arr))
