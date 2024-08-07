@@ -1,0 +1,8 @@
+import pandas as pd
+
+def duplicate_emails(person: pd.DataFrame) -> pd.DataFrame:
+    count=person.groupby('email').size()
+    dup_email=count[count>1].index
+    df = pd.DataFrame(dup_email,columns=['email'])
+    return df
+    
